@@ -53,7 +53,7 @@ module.exports = {
 		const sessionDate = interaction.options.getString('date');
 		const sessionTime = interaction.options.getString('heure');
 		const sessionActivity = interaction.options.getString('activite');
-		const numberOfPlayers = interaction.options.getInteger('nombre_de_joueur(s)');
+		const numberOfPlayers = interaction.options.getInteger('nombre_de_joueur');
 		const shipSize = interaction.options.getString('taille_de_navire');
 
 		const exampleEmbed = {
