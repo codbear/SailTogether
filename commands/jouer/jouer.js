@@ -8,7 +8,7 @@ module.exports = {
 		.setDescription('Publier un message pour trouver des joueurs')
 		.addStringOption(option =>
 			option
-			.setName('Date')
+			.setName('date')
 			.setDescription('la date de votre session de jeu au format jj/mm')
 			.setRequired(true)
 		)
