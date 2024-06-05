@@ -49,7 +49,6 @@ module.exports = {
 		.setDefaultMemberPermissions(0)
 		.setDMPermission(false),
 	async execute(interaction) {
-		console.log(interaction.user);
 		const sessionDate = interaction.options.getString('date');
 		const sessionTime = interaction.options.getString('heure');
 		const sessionActivity = interaction.options.getString('activite');
@@ -57,7 +56,7 @@ module.exports = {
 		const shipSize = interaction.options.getString('taille_de_navire');
 
 		const exampleEmbed = {
-			color: 0x0099ff,
+			color: 0xdaa520,
 			author: {
 				name: interaction.user.globalName,
 				icon_url: interaction.user.displayAvatarURL(),
