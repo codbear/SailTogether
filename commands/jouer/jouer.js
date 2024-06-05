@@ -14,19 +14,19 @@ module.exports = {
 		)
 		.addStringOption(option =>
 			option
-			.setName('Heure')
+			.setName('heure')
 			.setDescription('l\'heure de votre session de jeu au format hh:mm')
 			.setRequired(true)
 		)
 		.addStringOption(option =>
 			option
-			.setName('Activite')
+			.setName('activite')
 			.setDescription('l\'activité que vous souhaitez faire au cours de votre session')
 			.setRequired(true)
 		)
 		.addIntegerOption(option =>
 			option
-			.setName('Nombre de joueur')
+			.setName('nombre de joueur')
 			.setDescription('le nombre de joueur max que vous recherchez')
 			.setRequired(true)
 			.addChoices(
@@ -37,7 +37,7 @@ module.exports = {
 		)
 		.addStringOption(option =>
 			option
-			.setName('Taille de navire')
+			.setName('taille de navire')
 			.setDescription('la taille du navire que vous souhaitez affréter')
 			.setRequired(true)
 			.addChoices(
@@ -50,11 +50,11 @@ module.exports = {
 		.setDMPermission(false),
 	async execute(interaction) {
 		console.log(interaction.user);
-		const sessionDate = interaction.options.getString('Date');
-		const sessionTime = interaction.options.getString('Heure');
-		const sessionActivity = interaction.options.getString('Activite');
-		const numberOfPlayers = interaction.options.getInteger('Nombre de joueur(s)');
-		const shipSize = interaction.options.getString('Taille de navire');
+		const sessionDate = interaction.options.getString('date');
+		const sessionTime = interaction.options.getString('heure');
+		const sessionActivity = interaction.options.getString('activite');
+		const numberOfPlayers = interaction.options.getInteger('nombre de joueur(s)');
+		const shipSize = interaction.options.getString('taille de navire');
 
 		const exampleEmbed = {
 			color: 0x0099ff,
