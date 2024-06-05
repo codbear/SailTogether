@@ -8,53 +8,53 @@ module.exports = {
 		.setDescription('Publier un message pour trouver des joueurs')
 		.addStringOption(option =>
 			option
-			.setName('date')
+			.setName('Date')
 			.setDescription('la date de votre session de jeu au format jj/mm')
 			.setRequired(true)
 		)
 		.addStringOption(option =>
 			option
-			.setName('heure')
+			.setName('Heure')
 			.setDescription('l\'heure de votre session de jeu au format hh:mm')
 			.setRequired(true)
 		)
 		.addStringOption(option =>
 			option
-			.setName('activite')
+			.setName('Activite')
 			.setDescription('l\'activité que vous souhaitez faire au cours de votre session')
 			.setRequired(true)
 		)
 		.addIntegerOption(option =>
 			option
-			.setName('nombre_de_joueur')
+			.setName('Nombre de joueur')
 			.setDescription('le nombre de joueur max que vous recherchez')
 			.setRequired(true)
 			.addChoices(
-				{ name: 'un', value: 1 },
-				{ name: 'deux', value: 2 },
-				{ name: 'trois', value: 3 },
+				{ name: 'Un', value: 1 },
+				{ name: 'Deux', value: 2 },
+				{ name: 'Trois', value: 3 },
 			)
 		)
 		.addStringOption(option =>
 			option
-			.setName('taille_de_navire')
+			.setName('Taille de navire')
 			.setDescription('la taille du navire que vous souhaitez affréter')
 			.setRequired(true)
 			.addChoices(
-				{ name: 'sloop', value: 'sloop' },
-				{ name: 'brig', value: 'brig' },
-				{ name: 'gallion', value: 'gallion' },
+				{ name: 'Sloop', value: 'Sloop' },
+				{ name: 'Brigantin', value: 'Brigantin' },
+				{ name: 'Galion', value: 'Galion' },
 			)
 		)
 		.setDefaultMemberPermissions(0)
 		.setDMPermission(false),
 	async execute(interaction) {
 		console.log(interaction.user);
-		const sessionDate = interaction.options.getString('date');
-		const sessionTime = interaction.options.getString('heure');
-		const sessionActivity = interaction.options.getString('activite');
-		const numberOfPlayers = interaction.options.getInteger('nombre_de_joueur');
-		const shipSize = interaction.options.getString('taille_de_navire');
+		const sessionDate = interaction.options.getString('Date');
+		const sessionTime = interaction.options.getString('Heure');
+		const sessionActivity = interaction.options.getString('Activite');
+		const numberOfPlayers = interaction.options.getInteger('Nombre de joueur(s)');
+		const shipSize = interaction.options.getString('Taille de navire');
 
 		const exampleEmbed = {
 			color: 0x0099ff,
@@ -62,14 +62,14 @@ module.exports = {
 				name: interaction.user.globalName,
 				icon_url: interaction.user.displayAvatarURL(),
 			},
-			description: `Nouvelle session de jeu sur Sea of Thieves le **${sessionDate} à ${sessionTime}**. \n\nMerci de répondre avec l'emote :ballot_box_with_check: uniquement si intéressé !`,
+			description: `Nouvelle session de jeu sur Sea of Thieves le **${sessionDate} à ${sessionTime} h**. \n\nMerci de répondre avec l'emote :ballot_box_with_check: uniquement si intéressé !`,
 			fields: [
 				{
 					name: 'Activité(s) durant la session',
 					value: sessionActivity,
 				},
 				{
-					name: 'Nombre de joueur',
+					name: 'Nombre de joueur(s)',
 					value: numberOfPlayers,
 					inline: true,
 				},
