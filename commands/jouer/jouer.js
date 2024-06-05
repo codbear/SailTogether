@@ -26,7 +26,7 @@ module.exports = {
 		)
 		.addIntegerOption(option =>
 			option
-			.setName('nombre de joueur')
+			.setName('nombre_de_joueur')
 			.setDescription('le nombre de joueur max que vous recherchez')
 			.setRequired(true)
 			.addChoices(
@@ -37,7 +37,7 @@ module.exports = {
 		)
 		.addStringOption(option =>
 			option
-			.setName('taille de navire')
+			.setName('taille_de_navire')
 			.setDescription('la taille du navire que vous souhaitez affréter')
 			.setRequired(true)
 			.addChoices(
@@ -53,8 +53,8 @@ module.exports = {
 		const sessionDate = interaction.options.getString('date');
 		const sessionTime = interaction.options.getString('heure');
 		const sessionActivity = interaction.options.getString('activite');
-		const numberOfPlayers = interaction.options.getInteger('nombre de joueur(s)');
-		const shipSize = interaction.options.getString('taille de navire');
+		const numberOfPlayers = interaction.options.getInteger('nombre_de_joueur(s)');
+		const shipSize = interaction.options.getString('taille_de_navire');
 
 		const exampleEmbed = {
 			color: 0x0099ff,
